@@ -6,35 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/home/samuel/software/GitHub/g4-tutorials/simple-box/include/B1DetectorConstruction.hh
-G4VUserDetectorConstruction.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/include/G4VUserDetectorConstruction.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/include/B1PrimaryGeneratorAction.hh
+G4VUserPrimaryGeneratorAction.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/include/G4VUserPrimaryGeneratorAction.hh
+G4ParticleGun.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/include/G4ParticleGun.hh
 globals.hh
 /home/samuel/software/GitHub/g4-tutorials/simple-box/include/globals.hh
 
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/B1DetectorConstruction.cc
-B1DetectorConstruction.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/B1DetectorConstruction.hh
-G4RunManager.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4RunManager.hh
-G4NistManager.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4NistManager.hh
-G4Box.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4Box.hh
-G4Cons.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4Cons.hh
-G4Orb.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4Orb.hh
-G4Sphere.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4Sphere.hh
-G4Trd.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4Trd.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/B1PrimaryGeneratorAction.cc
+B1PrimaryGeneratorAction.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/B1PrimaryGeneratorAction.hh
+G4LogicalVolumeStore.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4LogicalVolumeStore.hh
 G4LogicalVolume.hh
 /home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4LogicalVolume.hh
-G4PVPlacement.hh
-/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4PVPlacement.hh
+G4Box.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4Box.hh
+G4RunManager.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4RunManager.hh
+G4ParticleGun.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4ParticleGun.hh
+G4ParticleTable.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4ParticleTable.hh
+G4ParticleDefinition.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4ParticleDefinition.hh
 G4SystemOfUnits.hh
 /home/samuel/software/GitHub/g4-tutorials/simple-box/src/G4SystemOfUnits.hh
+Randomize.hh
+/home/samuel/software/GitHub/g4-tutorials/simple-box/src/Randomize.hh
 
 /home/samuel/software/g4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
 iosfwd
@@ -578,22 +578,6 @@ G4VSolid.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4ClassificationOfNewTrack.hh
 
-/home/samuel/software/g4-install/include/Geant4/G4Cons.hh
-G4GeomTypes.hh
-/home/samuel/software/g4-install/include/Geant4/G4GeomTypes.hh
-G4UCons.hh
-/home/samuel/software/g4-install/include/Geant4/G4UCons.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/samuel/software/g4-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
-G4Cons.icc
-/home/samuel/software/g4-install/include/Geant4/G4Cons.icc
-
-/home/samuel/software/g4-install/include/Geant4/G4Cons.icc
-
 /home/samuel/software/g4-install/include/Geant4/G4DCofThisEvent.hh
 globals.hh
 /home/samuel/software/g4-install/include/Geant4/globals.hh
@@ -826,14 +810,6 @@ G4VHitsCollection.hh
 vector
 -
 
-/home/samuel/software/g4-install/include/Geant4/G4ICRU90StoppingData.hh
-globals.hh
-/home/samuel/software/g4-install/include/Geant4/globals.hh
-G4Material.hh
-/home/samuel/software/g4-install/include/Geant4/G4Material.hh
-G4LPhysicsFreeVector.hh
-/home/samuel/software/g4-install/include/Geant4/G4LPhysicsFreeVector.hh
-
 /home/samuel/software/g4-install/include/Geant4/G4IonisParamElm.hh
 G4ios.hh
 /home/samuel/software/g4-install/include/Geant4/G4ios.hh
@@ -866,10 +842,6 @@ vector
 G4Isotope.hh
 /home/samuel/software/g4-install/include/Geant4/G4Isotope.hh
 
-/home/samuel/software/g4-install/include/Geant4/G4LPhysicsFreeVector.hh
-G4PhysicsFreeVector.hh
-/home/samuel/software/g4-install/include/Geant4/G4PhysicsFreeVector.hh
-
 /home/samuel/software/g4-install/include/Geant4/G4Log.hh
 G4Types.hh
 /home/samuel/software/g4-install/include/Geant4/G4Types.hh
@@ -895,6 +867,14 @@ G4LogicalVolume.icc
 /home/samuel/software/g4-install/include/Geant4/G4LogicalVolume.icc
 
 /home/samuel/software/g4-install/include/Geant4/G4LogicalVolume.icc
+
+/home/samuel/software/g4-install/include/Geant4/G4LogicalVolumeStore.hh
+vector
+-
+G4LogicalVolume.hh
+/home/samuel/software/g4-install/include/Geant4/G4LogicalVolume.hh
+G4VStoreNotifier.hh
+/home/samuel/software/g4-install/include/Geant4/G4VStoreNotifier.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4LorentzVector.hh
 globals.hh
@@ -1076,50 +1056,6 @@ G4Navigator.icc
 
 /home/samuel/software/g4-install/include/Geant4/G4Navigator.icc
 
-/home/samuel/software/g4-install/include/Geant4/G4NistElementBuilder.hh
-vector
--
-CLHEP/Units/PhysicalConstants.h
--
-globals.hh
-/home/samuel/software/g4-install/include/Geant4/globals.hh
-G4Element.hh
-/home/samuel/software/g4-install/include/Geant4/G4Element.hh
-G4Threading.hh
-/home/samuel/software/g4-install/include/Geant4/G4Threading.hh
-
-/home/samuel/software/g4-install/include/Geant4/G4NistManager.hh
-vector
--
-CLHEP/Units/PhysicalConstants.h
--
-globals.hh
-/home/samuel/software/g4-install/include/Geant4/globals.hh
-G4Material.hh
-/home/samuel/software/g4-install/include/Geant4/G4Material.hh
-G4NistElementBuilder.hh
-/home/samuel/software/g4-install/include/Geant4/G4NistElementBuilder.hh
-G4NistMaterialBuilder.hh
-/home/samuel/software/g4-install/include/Geant4/G4NistMaterialBuilder.hh
-G4ICRU90StoppingData.hh
-/home/samuel/software/g4-install/include/Geant4/G4ICRU90StoppingData.hh
-G4Pow.hh
-/home/samuel/software/g4-install/include/Geant4/G4Pow.hh
-G4Threading.hh
-/home/samuel/software/g4-install/include/Geant4/G4Threading.hh
-
-/home/samuel/software/g4-install/include/Geant4/G4NistMaterialBuilder.hh
-vector
--
-CLHEP/Units/PhysicalConstants.h
--
-globals.hh
-/home/samuel/software/g4-install/include/Geant4/globals.hh
-G4Material.hh
-/home/samuel/software/g4-install/include/Geant4/G4Material.hh
-G4Threading.hh
-/home/samuel/software/g4-install/include/Geant4/G4Threading.hh
-
 /home/samuel/software/g4-install/include/Geant4/G4Normal3D.hh
 globals.hh
 /home/samuel/software/g4-install/include/Geant4/globals.hh
@@ -1146,22 +1082,6 @@ G4NormalNavigation.icc
 
 /home/samuel/software/g4-install/include/Geant4/G4NormalNavigation.icc
 
-/home/samuel/software/g4-install/include/Geant4/G4Orb.hh
-G4GeomTypes.hh
-/home/samuel/software/g4-install/include/Geant4/G4GeomTypes.hh
-G4UOrb.hh
-/home/samuel/software/g4-install/include/Geant4/G4UOrb.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/samuel/software/g4-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
-G4Orb.icc
-/home/samuel/software/g4-install/include/Geant4/G4Orb.icc
-
-/home/samuel/software/g4-install/include/Geant4/G4Orb.icc
-
 /home/samuel/software/g4-install/include/Geant4/G4OrderedTable.hh
 vector
 -
@@ -1179,12 +1099,6 @@ pwdefs.hh
 /home/samuel/software/g4-install/include/Geant4/pwdefs.hh
 G4AutoLock.hh
 /home/samuel/software/g4-install/include/Geant4/G4AutoLock.hh
-
-/home/samuel/software/g4-install/include/Geant4/G4PVPlacement.hh
-G4VPhysicalVolume.hh
-/home/samuel/software/g4-install/include/Geant4/G4VPhysicalVolume.hh
-G4Transform3D.hh
-/home/samuel/software/g4-install/include/Geant4/G4Transform3D.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4ParameterisedNavigation.hh
 G4Types.hh
@@ -1246,6 +1160,20 @@ G4ParticleDefinition.icc
 
 /home/samuel/software/g4-install/include/Geant4/G4ParticleDefinition.icc
 
+/home/samuel/software/g4-install/include/Geant4/G4ParticleGun.hh
+globals.hh
+/home/samuel/software/g4-install/include/Geant4/globals.hh
+G4VPrimaryGenerator.hh
+/home/samuel/software/g4-install/include/Geant4/G4VPrimaryGenerator.hh
+G4ThreeVector.hh
+/home/samuel/software/g4-install/include/Geant4/G4ThreeVector.hh
+G4ParticleDefinition.hh
+/home/samuel/software/g4-install/include/Geant4/G4ParticleDefinition.hh
+G4PrimaryVertex.hh
+/home/samuel/software/g4-install/include/Geant4/G4PrimaryVertex.hh
+G4ParticleMomentum.hh
+/home/samuel/software/g4-install/include/Geant4/G4ParticleMomentum.hh
+
 /home/samuel/software/g4-install/include/Geant4/G4ParticleMomentum.hh
 G4ThreeVector.hh
 /home/samuel/software/g4-install/include/Geant4/G4ThreeVector.hh
@@ -1273,14 +1201,6 @@ map
 -
 G4ParticleDefinition.hh
 /home/samuel/software/g4-install/include/Geant4/G4ParticleDefinition.hh
-
-/home/samuel/software/g4-install/include/Geant4/G4PhysicsFreeVector.hh
-G4DataVector.hh
-/home/samuel/software/g4-install/include/Geant4/G4DataVector.hh
-G4PhysicsVector.hh
-/home/samuel/software/g4-install/include/Geant4/G4PhysicsVector.hh
-globals.hh
-/home/samuel/software/g4-install/include/Geant4/globals.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4PhysicsModelCatalog.hh
 vector
@@ -1353,16 +1273,6 @@ HepPolyhedron.h
 /home/samuel/software/g4-install/include/Geant4/HepPolyhedron.h
 G4Visible.hh
 /home/samuel/software/g4-install/include/Geant4/G4Visible.hh
-
-/home/samuel/software/g4-install/include/Geant4/G4Pow.hh
-G4DataVector.hh
-/home/samuel/software/g4-install/include/Geant4/G4DataVector.hh
-G4Exp.hh
-/home/samuel/software/g4-install/include/Geant4/G4Exp.hh
-G4Log.hh
-/home/samuel/software/g4-install/include/Geant4/G4Log.hh
-globals.hh
-/home/samuel/software/g4-install/include/Geant4/globals.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4PrimaryParticle.hh
 globals.hh
@@ -1621,22 +1531,6 @@ G4SmartVoxelProxy.icc
 /home/samuel/software/g4-install/include/Geant4/G4SmartVoxelProxy.icc
 
 /home/samuel/software/g4-install/include/Geant4/G4SmartVoxelProxy.icc
-
-/home/samuel/software/g4-install/include/Geant4/G4Sphere.hh
-G4GeomTypes.hh
-/home/samuel/software/g4-install/include/Geant4/G4GeomTypes.hh
-G4USphere.hh
-/home/samuel/software/g4-install/include/Geant4/G4USphere.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/samuel/software/g4-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
-G4Sphere.icc
-/home/samuel/software/g4-install/include/Geant4/G4Sphere.icc
-
-/home/samuel/software/g4-install/include/Geant4/G4Sphere.icc
 
 /home/samuel/software/g4-install/include/Geant4/G4StackManager.hh
 G4UserStackingAction.hh
@@ -1936,20 +1830,6 @@ globals.hh
 CLHEP/Geometry/Transform3D.h
 -
 
-/home/samuel/software/g4-install/include/Geant4/G4Trd.hh
-G4GeomTypes.hh
-/home/samuel/software/g4-install/include/Geant4/G4GeomTypes.hh
-G4UTrd.hh
-/home/samuel/software/g4-install/include/Geant4/G4UTrd.hh
-G4CSGSolid.hh
-/home/samuel/software/g4-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
-G4Trd.icc
-/home/samuel/software/g4-install/include/Geant4/G4Trd.icc
-
-/home/samuel/software/g4-install/include/Geant4/G4Trd.icc
-
 /home/samuel/software/g4-install/include/Geant4/G4Types.hh
 G4GlobalConfig.hh
 /home/samuel/software/g4-install/include/Geant4/G4GlobalConfig.hh
@@ -1992,14 +1872,6 @@ VecGeom/volumes/UnplacedBox.h
 G4Polyhedron.hh
 /home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
 
-/home/samuel/software/g4-install/include/Geant4/G4UCons.hh
-G4UAdapter.hh
-/home/samuel/software/g4-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedCone.h
--
-G4Polyhedron.hh
-/home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
-
 /home/samuel/software/g4-install/include/Geant4/G4UIcommand.hh
 vector
 -
@@ -2035,30 +1907,6 @@ G4UItokenNum.hh
 /home/samuel/software/g4-install/include/Geant4/G4UItokenNum.hh
 globals.hh
 /home/samuel/software/g4-install/include/Geant4/globals.hh
-
-/home/samuel/software/g4-install/include/Geant4/G4UOrb.hh
-G4UAdapter.hh
-/home/samuel/software/g4-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedOrb.h
--
-G4Polyhedron.hh
-/home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
-
-/home/samuel/software/g4-install/include/Geant4/G4USphere.hh
-G4UAdapter.hh
-/home/samuel/software/g4-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedSphere.h
--
-G4Polyhedron.hh
-/home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
-
-/home/samuel/software/g4-install/include/Geant4/G4UTrd.hh
-G4UAdapter.hh
-/home/samuel/software/g4-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedTrd.h
--
-G4Polyhedron.hh
-/home/samuel/software/g4-install/include/Geant4/G4Polyhedron.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4UserStackingAction.hh
 G4ClassificationOfNewTrack.hh
@@ -2099,6 +1947,8 @@ G4Transform3D.hh
 /home/samuel/software/g4-install/include/Geant4/G4VHitsCollection.hh
 globals.hh
 /home/samuel/software/g4-install/include/Geant4/globals.hh
+
+/home/samuel/software/g4-install/include/Geant4/G4VNotifier.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4VPVParameterisation.hh
 G4Types.hh
@@ -2145,6 +1995,10 @@ G4VPhysicalVolume.icc
 /home/samuel/software/g4-install/include/Geant4/G4VPhysicalVolume.icc
 
 /home/samuel/software/g4-install/include/Geant4/G4VPhysicalVolume.icc
+
+/home/samuel/software/g4-install/include/Geant4/G4VPrimaryGenerator.hh
+G4ThreeVector.hh
+/home/samuel/software/g4-install/include/Geant4/G4ThreeVector.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4VProcess.hh
 cmath
@@ -2202,6 +2056,10 @@ G4ForceCondition.hh
 G4GPILSelection.hh
 /home/samuel/software/g4-install/include/Geant4/G4GPILSelection.hh
 
+/home/samuel/software/g4-install/include/Geant4/G4VStoreNotifier.hh
+G4VNotifier.hh
+/home/samuel/software/g4-install/include/Geant4/G4VNotifier.hh
+
 /home/samuel/software/g4-install/include/Geant4/G4VTouchable.hh
 G4Types.hh
 /home/samuel/software/g4-install/include/Geant4/G4Types.hh
@@ -2224,13 +2082,9 @@ globals.hh
 G4ThreeVector.hh
 /home/samuel/software/g4-install/include/Geant4/G4ThreeVector.hh
 
-/home/samuel/software/g4-install/include/Geant4/G4VUserDetectorConstruction.hh
-globals.hh
-/home/samuel/software/g4-install/include/Geant4/globals.hh
-vector
--
-
 /home/samuel/software/g4-install/include/Geant4/G4VUserEventInformation.hh
+
+/home/samuel/software/g4-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh
 
 /home/samuel/software/g4-install/include/Geant4/G4VUserTrackInformation.hh
 globals.hh

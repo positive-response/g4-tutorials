@@ -74,6 +74,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   G4double world_sizeXY = 1.2*env_sizeXY;
   G4double world_sizeZ  = 1.2*env_sizeZ;
   G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
+  G4Material* box_mat = nist->FindOrBuildMaterial("G4_WATER");
 
   // World volume  
   G4Box* solidWorld             =  new G4Box("World",0.5*world_sizeXY, 0.5*world_sizeXY, 0.5*world_sizeZ);     //Solid volume
@@ -81,9 +82,9 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   G4VPhysicalVolume* physWorld  =  new G4PVPlacement(0, G4ThreeVector(), logicWorld, "World",  0, false,  0,  checkOverlaps);        // Physical volume
 
 
-   // World volume  
+   // Box
   G4Box* solidBox               =  new G4Box("Box",0.25*world_sizeXY, 0.25*world_sizeXY, 0.25*world_sizeZ);     //Solid volume
-  G4LogicalVolume* logicBox   =  new G4LogicalVolume(solidBox,  world_mat,  "Box");            //Logical volume, o
+  G4LogicalVolume* logicBox   =  new G4LogicalVolume(solidBox,  box_mat,  "Box");            //Logical volume, o
   G4VPhysicalVolume* physBox  =  new G4PVPlacement(0, G4ThreeVector(), logicBox, "Box",  logicWorld, false,  0,  checkOverlaps);        // Physical volume
 
   return physWorld;
