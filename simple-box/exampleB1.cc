@@ -39,6 +39,7 @@
 #include "G4UIExecutive.hh"
 
 #include "Randomize.hh"
+#include "PhysicsList_MuDecayWithSpin.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -65,7 +66,10 @@ int main(int argc,char** argv)
   runManager->SetUserInitialization(new B1DetectorConstruction());
 
   // Physics list
-  G4VModularPhysicsList* physicsList = new QBBC;
+
+  //G4VModularPhysicsList* physicsList = new QBBC;
+  G4VModularPhysicsList* physicsList = new PhysicsList_MuDecayWithSpin("FTFP_BERT");
+  //G4VUserPhysicsList* physicsList = new PhysicsList_MuDecayWithSpin("FTFP_BERT");
   physicsList->SetVerboseLevel(1);
   runManager->SetUserInitialization(physicsList);
     

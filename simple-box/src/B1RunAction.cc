@@ -39,6 +39,8 @@
 #include "G4LogicalVolume.hh"
 #include "G4UnitsTable.hh"
 #include "G4SystemOfUnits.hh"
+#include "g4csv.hh"
+using namespace std;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -74,6 +76,24 @@ B1RunAction::~B1RunAction()
 
 void B1RunAction::BeginOfRunAction(const G4Run*)
 { 
+    G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  analysisManager->SetVerboseLevel(1);  
+  analysisManager->SetNtupleMerging(true);
+// Open an output file
+  analysisManager->OpenFile("output5.csv");
+  analysisManager->CreateNtuple("output", "energy");
+  analysisManager->CreateNtupleDColumn("Eid");
+  //analysisManager->CreateNtupleDColumn("pid");
+  //analysisManager->CreateNtupleDColumn("pdg");
+
+  //analysisManager->CreateNtupleDColumn("is_primary");
+
+  //analysisManager->CreateNtupleDColumn("del_t");
+  analysisManager->CreateNtupleDColumn("globTime");
+  //analysisManager->CreateNtupleDColumn("propTime");
+  //analysisManager->CreateNtupleDColumn("localTime");
+  analysisManager->FinishNtuple();
+
   // inform the runManager to save random number seed
   G4RunManager::GetRunManager()->SetRandomNumberStore(false);
 
@@ -85,8 +105,12 @@ void B1RunAction::BeginOfRunAction(const G4Run*)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void B1RunAction::EndOfRunAction(const G4Run* run)
+void B1RunAction::EndOfRunAction(const G4Run* )
 {
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  // Write and close the output file
+  analysisManager->Write();
+  analysisManager->CloseFile();
   // G4int nofEvents = run->GetNumberOfEvent();
   // if (nofEvents == 0) return;
 

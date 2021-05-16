@@ -35,6 +35,13 @@
 #include "G4Event.hh"
 #include "G4RunManager.hh"
 #include "G4LogicalVolume.hh"
+#include "g4csv.hh"
+
+#include "cmath"
+#include "cstring"
+#include "fstream"
+
+using namespace std;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -53,6 +60,36 @@ B1SteppingAction::~B1SteppingAction()
 
 void B1SteppingAction::UserSteppingAction(const G4Step* step)
 {
+   /*ofstream fout;
+    fout.open("run9.txt",ios::app);
+    fout<<step->GetPreStepPoint()-> GetPosition()<<step->GetPreStepPoint()->GetKineticEnergy()<<step->GetPreStepPoint()-> GetMomentum()<<step->GetPreStepPoint()-> GetLocalTime()<<G4endl;
+    fout.close();*/
+  int ColId = 0;  
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  //G4cout<<step->GetTrack()->GetParentID()<<endl;
+   //G4cout<<step->GetTrack()->GetDefinition()->GetPDGEncoding()<<endl;
+  // Fill ntuple
+  //G4LogicalVolume* volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();
+if((step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume()->GetMaterial()->GetName())== "G4_GLASS_PLATE")   
+{
+  //if(step->GetTrack()->GetParentID()==-11)
+  if(step->GetTrack()->GetDefinition()->GetPDGEncoding()==-11)
+  {
+     analysisManager->FillNtupleDColumn(ColId++, G4EventManager::GetEventManager()->GetConstCurrentEvent()->GetEventID());
+     //analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetDefinition()->GetPDGEncoding());
+     //analysisManager->FillNtupleDColumn(ColId++, objName.toLatin1().data());
+    // analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetParentID());
+     
+     //analysisManager->FillNtupleDColumn(ColId++, step->GetDeltaTime());
+     analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetGlobalTime());
+     //analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetProperTime());
+     //analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetLocalTime());
+
+     
+
+     analysisManager->AddNtupleRow();
+  }
+}
   // if (!fScoringVolume) { 
   //   const B1DetectorConstruction* detectorConstruction
   //     = static_cast<const B1DetectorConstruction*>
@@ -71,7 +108,8 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
   // // collect energy deposited in this step
   // G4double edepStep = step->GetTotalEnergyDeposit();
   // fEventAction->AddEdep(edepStep);  
-  G4cout<<"*************Inside stepping action*********"<<G4endl;
+  //G4cout<<"*************Inside stepping action*********"<<G4endl;
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

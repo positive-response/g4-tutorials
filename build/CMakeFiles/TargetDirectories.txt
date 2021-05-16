@@ -1,8 +1,0 @@
-/home/samuel/software/GitHub/g4-tutorials/build/CMakeFiles/install/strip.dir
-/home/samuel/software/GitHub/g4-tutorials/build/CMakeFiles/install/local.dir
-/home/samuel/software/GitHub/g4-tutorials/build/CMakeFiles/install.dir
-/home/samuel/software/GitHub/g4-tutorials/build/CMakeFiles/list_install_components.dir
-/home/samuel/software/GitHub/g4-tutorials/build/CMakeFiles/rebuild_cache.dir
-/home/samuel/software/GitHub/g4-tutorials/build/CMakeFiles/edit_cache.dir
-/home/samuel/software/GitHub/g4-tutorials/build/CMakeFiles/B1.dir
-/home/samuel/software/GitHub/g4-tutorials/build/CMakeFiles/exampleB1.dir

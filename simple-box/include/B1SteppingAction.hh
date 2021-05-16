@@ -32,6 +32,7 @@
 
 #include "G4UserSteppingAction.hh"
 #include "globals.hh"
+#include "fstream"
 
 class B1EventAction;
 

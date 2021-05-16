@@ -32,10 +32,13 @@
 
 #include "G4VUserDetectorConstruction.hh"
 #include "globals.hh"
+#include "G4FieldManager.hh"
+#include "G4LogicalVolume.hh"
+#include <vector>
 
 class G4VPhysicalVolume;
 class G4LogicalVolume;
-
+class G4VisAttributes;
 /// Detector construction class to define materials and geometry.
 
 class B1DetectorConstruction : public G4VUserDetectorConstruction
@@ -45,9 +48,16 @@ class B1DetectorConstruction : public G4VUserDetectorConstruction
     virtual ~B1DetectorConstruction();
 
     virtual G4VPhysicalVolume* Construct();
-    
-    G4LogicalVolume* GetScoringVolume() const { return fScoringVolume; }
+     virtual void ConstructSDandField();
 
+    G4LogicalVolume* GetScoringVolume() const { return fScoringVolume; }
+  
+  private:
+     void DefineCommands();
+    //static G4ThreadLocal G4FieldManager* fieldMgr;
+    G4VPhysicalVolume* IronPhy[100];
+    G4LogicalVolume* IronLog[100];
+    std::vector<G4VisAttributes*> fVisAttributes;
   protected:
     G4LogicalVolume*  fScoringVolume;
 };

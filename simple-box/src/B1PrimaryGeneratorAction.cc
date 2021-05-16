@@ -39,6 +39,8 @@
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
 
+
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B1PrimaryGeneratorAction::B1PrimaryGeneratorAction()
@@ -53,10 +55,10 @@ B1PrimaryGeneratorAction::B1PrimaryGeneratorAction()
   G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
   G4String particleName;
   G4ParticleDefinition* particle
-    = particleTable->FindParticle(particleName="proton");
+    = particleTable->FindParticle(particleName="mu+");
   fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
-  fParticleGun->SetParticleEnergy(100.*MeV);
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,0.));
+  fParticleGun->SetParticleEnergy(0.*MeV);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -105,7 +107,8 @@ void B1PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   // G4double y0 = size * envSizeXY * (G4UniformRand()-0.5);
   // G4double z0 = -0.5 * envSizeZ;
   
-  fParticleGun->SetParticlePosition(G4ThreeVector(0,0,0));
+  fParticleGun->SetParticlePosition(G4ThreeVector(0.0*m,0,0.0*m));
+  fParticleGun->SetParticlePolarization(G4ThreeVector(0,0,1));
 
   fParticleGun->GeneratePrimaryVertex(anEvent);
 }
