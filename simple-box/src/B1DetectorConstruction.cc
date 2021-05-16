@@ -45,16 +45,15 @@
 #include "G4FieldManager.hh"
 #include "G4VUserDetectorConstruction.hh"
 
-
 #include "G4VisAttributes.hh"
 #include "G4Colour.hh"
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B1DetectorConstruction::B1DetectorConstruction()
 : G4VUserDetectorConstruction(),
   fScoringVolume(0)
-{ }
+{ 
+  //DefineCommands();
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -64,7 +63,7 @@ B1DetectorConstruction::~B1DetectorConstruction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 G4VPhysicalVolume* B1DetectorConstruction::Construct()
-{  
+/*{  
   // Get nist material manager
   G4NistManager* nist = G4NistManager::Instance();
   /*
@@ -110,10 +109,16 @@ G4Box* solidBox               =  new G4Box("Glass",tracker_xz, tracker_glass_y, 
 
   return physWorld;
 }*/
+{
+
+G4NistManager* nist = G4NistManager::Instance();
+
+//Define materials
 G4Material* Air = nist->FindOrBuildMaterial("G4_AIR");
 G4Material* Glass = nist->FindOrBuildMaterial("G4_GLASS_PLATE");
 G4Material* Iron = nist->FindOrBuildMaterial("G4_Fe");
 G4bool checkOverlaps = true;
+
 // Create world
 // solid volume
 G4double world_hx = 1.5*m;
@@ -170,6 +175,7 @@ pos_x = 0.0*cm;
 pos_y = 0.0*cm;
 pos_z = 0.0*cm;
 
+
  //physical volume of the geometry
 
     G4Box* IronBox = new G4Box("Iron",tracker1_hx,tracker1_hy,tracker1_hz); //solid volume of iron cube
@@ -211,11 +217,13 @@ int l = 0;
    } 
    //G4String current_volume_name  = step->GetPreStepPoint()->GetTouchableHandle() ->GetVolume()->GetLogicalVolume()->GetName();
 
+
   void B1DetectorConstruction::ConstructSDandField()
 {
   // Create global magnetic field messenger.
   // Uniform magnetic field is then created automatically if
   // the field value is not zero.
+
 int mag =100;
 
   for(int i=0;i<100;i++)
@@ -228,6 +236,7 @@ int mag =100;
 
    G4bool allLocal = true ;
   IronLog[i]->SetFieldManager(fieldMgr, allLocal);
+
   mag+=100;
 
   // Register the field manager for deleting

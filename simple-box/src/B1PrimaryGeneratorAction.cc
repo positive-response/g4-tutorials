@@ -101,7 +101,6 @@ void B1PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   //   G4Exception("B1PrimaryGeneratorAction::GeneratePrimaries()",
   //    "MyCode0002",JustWarning,msg);
   // }
-
   // G4double size = 0.8; 
   // G4double x0 = size * envSizeXY * (G4UniformRand()-0.5);
   // G4double y0 = size * envSizeXY * (G4UniformRand()-0.5);

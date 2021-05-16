@@ -76,6 +76,7 @@ B1RunAction::~B1RunAction()
 
 void B1RunAction::BeginOfRunAction(const G4Run*)
 { 
+
     G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   analysisManager->SetVerboseLevel(1);  
   analysisManager->SetNtupleMerging(true);
@@ -105,12 +106,14 @@ void B1RunAction::BeginOfRunAction(const G4Run*)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
+
 void B1RunAction::EndOfRunAction(const G4Run* )
 {
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   // Write and close the output file
   analysisManager->Write();
   analysisManager->CloseFile();
+
   // G4int nofEvents = run->GetNumberOfEvent();
   // if (nofEvents == 0) return;
 

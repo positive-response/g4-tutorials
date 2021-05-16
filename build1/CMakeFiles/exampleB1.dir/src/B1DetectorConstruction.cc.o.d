@@ -208,7 +208,6 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o: \
  /usr/include/c++/9/bits/stl_uninitialized.h \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
- /home/pooja/g4-install/include/Geant4/globals.hh \
  /home/pooja/g4-install/include/Geant4/G4FieldManager.hh \
  /home/pooja/g4-install/include/Geant4/G4FieldManager.icc \
  /home/pooja/g4-install/include/Geant4/G4LogicalVolume.hh \
@@ -257,6 +256,7 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o: \
  /home/pooja/g4-install/include/Geant4/CLHEP/Vector/Rotation.icc \
  /home/pooja/g4-install/include/Geant4/G4VPhysicalVolume.icc \
  /home/pooja/g4-install/include/Geant4/G4LogicalVolume.icc \
+ /home/pooja/g4-install/include/Geant4/globals.hh \
  /home/pooja/g4-install/include/Geant4/G4MagneticField.hh \
  /home/pooja/g4-install/include/Geant4/G4Field.hh \
  /home/pooja/g4-install/include/Geant4/G4RunManager.hh \

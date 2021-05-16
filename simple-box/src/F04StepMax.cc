@@ -76,4 +76,6 @@ G4VParticleChange* F04StepMax::PostStepDoIt(const G4Track& aTrack,
 G4double F04StepMax::GetMeanFreePath(const G4Track&,G4double,G4ForceCondition*)
 {
   return 0.;
+
 }
+
