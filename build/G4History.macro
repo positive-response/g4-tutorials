@@ -61,4 +61,4 @@ s/open OGL 600x600-0+0
 /vis/viewer/set/autoRefresh true
 /vis/viewer/refresh
 /vis/verbose warnings
-/run/beamOn 1
+/run/beamOn 2
