@@ -103,9 +103,10 @@ if((step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume
      
      //analysisManager->FillNtupleDColumn(ColId++, step->GetDeltaTime());
      analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetGlobalTime());
-     //analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetProperTime());
-     //analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetLocalTime());
-
+     
+     analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().x()));
+     analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().y()));
+     analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().z()));
      
 
      analysisManager->AddNtupleRow();

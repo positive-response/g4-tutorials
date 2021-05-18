@@ -1,0 +1,9 @@
+#class tools::wcsv::ntuple
+#title energy
+#separator 44
+#vector_separator 59
+#column double Eid
+#column double globTime
+#column double pos_x
+#column double pos_y
+#column double pos_z

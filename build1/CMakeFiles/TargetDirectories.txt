@@ -1,8 +1,0 @@
-/home/pooja/New-g4-tutorials/build1/CMakeFiles/install/local.dir
-/home/pooja/New-g4-tutorials/build1/CMakeFiles/install/strip.dir
-/home/pooja/New-g4-tutorials/build1/CMakeFiles/B1.dir
-/home/pooja/New-g4-tutorials/build1/CMakeFiles/install.dir
-/home/pooja/New-g4-tutorials/build1/CMakeFiles/exampleB1.dir
-/home/pooja/New-g4-tutorials/build1/CMakeFiles/rebuild_cache.dir
-/home/pooja/New-g4-tutorials/build1/CMakeFiles/edit_cache.dir
-/home/pooja/New-g4-tutorials/build1/CMakeFiles/list_install_components.dir

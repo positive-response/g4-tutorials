@@ -91,8 +91,9 @@ void B1RunAction::BeginOfRunAction(const G4Run*)
 
   //analysisManager->CreateNtupleDColumn("del_t");
   analysisManager->CreateNtupleDColumn("globTime");
-  //analysisManager->CreateNtupleDColumn("propTime");
-  //analysisManager->CreateNtupleDColumn("localTime");
+  analysisManager->CreateNtupleDColumn("pos_x");
+  analysisManager->CreateNtupleDColumn("pos_y");
+  analysisManager->CreateNtupleDColumn("pos_z");
   analysisManager->FinishNtuple();
 
   // inform the runManager to save random number seed
