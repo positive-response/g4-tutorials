@@ -121,9 +121,9 @@ G4bool checkOverlaps = true;
 
 // Create world
 // solid volume
-G4double world_hx = 1.5*m;
-G4double world_hy = 1.5*m;
-G4double world_hz = 1.5*m;
+G4double world_hx = 3*m;
+G4double world_hy = 3*m;
+G4double world_hz = 3*m;
 G4Box* worldBox = new G4Box("World",world_hx,world_hy,world_hz);
 // logical volume
 G4LogicalVolume*  worldLog = new G4LogicalVolume(worldBox,Air,"world");
@@ -224,10 +224,12 @@ int l = 0;
   // Uniform magnetic field is then created automatically if
   // the field value is not zero.
 
-int mag =100;
+int mag =500;
 
-  for(int i=0;i<100;i++)
+  for(int i=0;i<10;i++)
 {
+  for(int j=0;j<10;j++)
+  {
   G4UniformMagField* magField  = new G4UniformMagField(G4ThreeVector(mag*gauss,0.,0.));
    G4FieldManager* fieldMgr = new G4FieldManager(magField);
 
@@ -235,9 +237,9 @@ int mag =100;
    fieldMgr->CreateChordFinder(magField);
 
    G4bool allLocal = true ;
-  IronLog[i]->SetFieldManager(fieldMgr, allLocal);
-
-  mag+=100;
+  IronLog[(i*10)+j]->SetFieldManager(fieldMgr, allLocal);
+  }
+  mag+=500;
 
   // Register the field manager for deleting
  // G4AutoDelete::Register(fieldMgr);

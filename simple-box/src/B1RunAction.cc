@@ -76,12 +76,13 @@ B1RunAction::~B1RunAction()
 
 void B1RunAction::BeginOfRunAction(const G4Run*)
 { 
-
-    G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-  analysisManager->SetVerboseLevel(1);  
+   
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   analysisManager->SetNtupleMerging(true);
+  analysisManager->SetVerboseLevel(1);  
+  
 // Open an output file
-  analysisManager->OpenFile("output5.csv");
+  analysisManager->OpenFile("outputnew6.csv");
   analysisManager->CreateNtuple("output", "energy");
   analysisManager->CreateNtupleDColumn("Eid");
   //analysisManager->CreateNtupleDColumn("pid");
@@ -91,9 +92,9 @@ void B1RunAction::BeginOfRunAction(const G4Run*)
 
   //analysisManager->CreateNtupleDColumn("del_t");
   analysisManager->CreateNtupleDColumn("globTime");
-  analysisManager->CreateNtupleDColumn("pos_x");
-  analysisManager->CreateNtupleDColumn("pos_y");
-  analysisManager->CreateNtupleDColumn("pos_z");
+  //analysisManager->CreateNtupleDColumn("pos_x");
+  //analysisManager->CreateNtupleDColumn("pos_y");
+  //analysisManager->CreateNtupleDColumn("pos_z");
   analysisManager->FinishNtuple();
 
   // inform the runManager to save random number seed
@@ -108,7 +109,7 @@ void B1RunAction::BeginOfRunAction(const G4Run*)
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
-void B1RunAction::EndOfRunAction(const G4Run* )
+void B1RunAction::EndOfRunAction(const G4Run* run )
 {
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   // Write and close the output file

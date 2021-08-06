@@ -60,14 +60,18 @@ B1SteppingAction::~B1SteppingAction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void B1SteppingAction::UserSteppingAction(const G4Step* step)
-{ //G4double KE = step->GetPreStepPoint()->GetKineticEnergy();
+{
+  int eid = G4EventManager::GetEventManager()->GetConstCurrentEvent()->GetEventID();
+  G4String volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume()->GetMaterial()->GetName();
+  
+   //G4double KE = step->GetPreStepPoint()->GetKineticEnergy();
   //G4double LOCALTIME = step->GetPreStepPoint()->GetLocalTime();
  //G4ThreeVector momentum = step->GetPreStepPoint()->GetMomentum();
  //G4ThreeVector position = step->GetPreStepPoint()->GetPosition ();
 
   //G4cout<< position <<" "<< momentum << " "<< LOCALTIME << " "<<KE <<G4endl;
-   int ColId = 0;
-    G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+   //int ColId = 0;
+    //G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   // Fill ntuple
 /*
   G4String current_volume_name  = step->GetPreStepPoint()->GetTouchableHandle() ->GetVolume()->GetLogicalVolume()->GetName();
@@ -78,59 +82,65 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
   analysisManager->FillNtupleDColumn(4, step->GetPreStepPoint()->GetMomentum().z());
   analysisManager->AddNtupleRow();*/ // Original steps as told by sir
   //G4String current_volume_name  = step->GetPreStepPoint()->GetTouchableHandle() ->GetVolume()->GetLogicalVolume()->GetName();
-  if((step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume()->GetMaterial()->GetName())== "G4_GLASS_PLATE")   
-{
+  
 
    /*ofstream fout;
     fout.open("run9.txt",ios::app);
     fout<<step->GetPreStepPoint()-> GetPosition()<<step->GetPreStepPoint()->GetKineticEnergy()<<step->GetPreStepPoint()-> GetMomentum()<<step->GetPreStepPoint()-> GetLocalTime()<<G4endl;
     fout.close();*/
-  int ColId = 0;  
-  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+    
+  
   //G4cout<<step->GetTrack()->GetParentID()<<endl;
    //G4cout<<step->GetTrack()->GetDefinition()->GetPDGEncoding()<<endl;
   // Fill ntuple
   //G4LogicalVolume* volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();
-if((step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume()->GetMaterial()->GetName())== "G4_GLASS_PLATE")   
+  
+//if(step->GetTrack()->GetDefinition()->GetPDGEncoding()==-11)
+G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+if((volume == "G4_GLASS_PLATE")  &&  (step->GetTrack()->GetDefinition()->GetPDGEncoding()==-11))
 {
-  //if(step->GetTrack()->GetParentID()==-11)
-  if(step->GetTrack()->GetDefinition()->GetPDGEncoding()==-11)
+
+  int ColId = 0;
+  
   {
-     analysisManager->FillNtupleDColumn(ColId++, G4EventManager::GetEventManager()->GetConstCurrentEvent()->GetEventID());
+    
+     analysisManager->FillNtupleDColumn(ColId++, eid);
      //analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetDefinition()->GetPDGEncoding());
      //analysisManager->FillNtupleDColumn(ColId++, objName.toLatin1().data());
-    // analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetParentID());
+     //analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetParentID());
      
      //analysisManager->FillNtupleDColumn(ColId++, step->GetDeltaTime());
      analysisManager->FillNtupleDColumn(ColId++, step->GetTrack()->GetGlobalTime());
+  
+     //analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().x()));
+     //analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().y()));
+     //analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().z()));
      
-     analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().x()));
-     analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().y()));
-     analysisManager->FillNtupleDColumn(ColId++, (step->GetPreStepPoint()->GetPosition().z()));
-     
-
      analysisManager->AddNtupleRow();
-  }
+     
+  
 }
 
-  //   const B1DetectorConstruction* detectorConstruction
-  //     = static_cast<const B1DetectorConstruction*>
-  //       (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
-  //   fScoringVolume = detectorConstruction->GetScoringVolume();   
+   //  const B1DetectorConstruction* detectorConstruction
+     // = static_cast<const B1DetectorConstruction*>
+    
+      //  (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
+    //fScoringVolume = detectorConstruction->GetScoringVolume();   
   // }
 
-  // // get volume of the current step
-  // G4LogicalVolume* volume 
-  //   = step->GetPreStepPoint()->GetTouchableHandle()
-  //     ->GetVolume()->GetLogicalVolume();
+  // get volume of the current step
+ // G4LogicalVolume* volume2 
+   //  = step->GetPreStepPoint()->GetTouchableHandle()
+     //  ->GetVolume()->GetLogicalVolume();
       
   // // check if we are in scoring volume
-  // if (volume != fScoringVolume) return;
+   //if (volume2 != fScoringVolume) return;
 
   // // collect energy deposited in this step
-  // G4double edepStep = step->GetTotalEnergyDeposit();
-  // fEventAction->AddEdep(edepStep);  
+ //  G4double edepStep = step->GetTotalEnergyDeposit();
+   //fEventAction->AddEdep(edepStep);  
   //G4cout<<"*************Inside stepping action*********"<<G4endl;
+
 }
 }
 
