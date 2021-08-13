@@ -121,9 +121,9 @@ G4bool checkOverlaps = true;
 
 // Create world
 // solid volume
-G4double world_hx = 3*m;
-G4double world_hy = 3*m;
-G4double world_hz = 3*m;
+G4double world_hx = 0.6*m;
+G4double world_hy = 0.05*m;
+G4double world_hz = 0.6*m;
 G4Box* worldBox = new G4Box("World",world_hx,world_hy,world_hz);
 // logical volume
 G4LogicalVolume*  worldLog = new G4LogicalVolume(worldBox,Air,"world");
@@ -138,7 +138,7 @@ G4VPhysicalVolume* worldPhys = new G4PVPlacement(0,
                                                   checkOverlaps);
 
  auto visAttributes = new G4VisAttributes(G4Colour(1.0,1.0,1.0));
- visAttributes->SetVisibility(false);
+ visAttributes->SetVisibility(true);
   worldLog->SetVisAttributes(visAttributes);
   //fVisAttributes.push_back(visAttributes);
   
@@ -153,9 +153,9 @@ G4double pos_x ;
 G4double pos_y ;
 G4double pos_z ;
 //physical volume of  the detector
- pos_x=0.45*m;
+ pos_x=-0.01*cm;
  pos_y=5*cm;
- pos_z=0.45*m;
+ pos_z=-0.01*cm;
    G4VPhysicalVolume* Glassphy = new G4PVPlacement(0,
                                                     G4ThreeVector(pos_x,pos_y,pos_z),
                                                     GlassLog,
@@ -180,8 +180,8 @@ pos_z = 0.0*cm;
 
     G4Box* IronBox = new G4Box("Iron",tracker1_hx,tracker1_hy,tracker1_hz); //solid volume of iron cube
 
-int k= 0;
-int l = 0;
+int k= -50;
+int l = -50;
  
  
  for(int i = 0;i<10;i++)
@@ -207,7 +207,7 @@ int l = 0;
    l+=10; 
    
   }
-  l=0;
+  l=-50;
   k+=10;
   G4cout<<G4endl;
   }
@@ -224,7 +224,7 @@ int l = 0;
   // Uniform magnetic field is then created automatically if
   // the field value is not zero.
 
-int mag =500;
+int mag =100;
 
   for(int i=0;i<10;i++)
 {
@@ -236,13 +236,14 @@ int mag =500;
    fieldMgr->SetDetectorField(magField);
    fieldMgr->CreateChordFinder(magField);
 
-   G4bool allLocal = true ;
+   G4bool allLocal = true;
   IronLog[(i*10)+j]->SetFieldManager(fieldMgr, allLocal);
+  //G4AutoDelete::Register(fieldMgr);
   }
-  mag+=500;
+  mag+=10;
 
   // Register the field manager for deleting
- // G4AutoDelete::Register(fieldMgr);
+  
 } 
 }        
 
